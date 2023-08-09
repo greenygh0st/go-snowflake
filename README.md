@@ -13,7 +13,7 @@ package main
 
 import (
     "fmt"
-    "github.com/greenygh0st/sonyflake"
+    "github.com/greenygh0st/go-snowflake"
 )
 
 ```
