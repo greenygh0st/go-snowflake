@@ -1,4 +1,5 @@
 # snowflake
+[![Build](https://github.com/greenygh0st/go-snowflake/actions/workflows/go.yml/badge.svg)](https://github.com/greenygh0st/go-snowflake/actions/workflows/go.yml)
 A library for creating Snowflake identifiers in Go. Snowflakes are 64 bit identifiers that are guaranteed to be unique across all processes and machines for a given time interval. They are comprised of:
 * 41 bits for time in milliseconds (gives us 69 years with a custom epoch)
 * 10 bits for a machine id (gives us up to 1024 machines)
