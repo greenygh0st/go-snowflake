@@ -20,6 +20,6 @@ import (
 
 #### Usage
 ```go
-node := NewSnowflake(1, 1)
+node := snowflake.NewSnowflake(1, 1)
 id := node.Generate()
 ```
