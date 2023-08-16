@@ -35,6 +35,7 @@ func NewSnowflake(workerID, dataCenterID int64) *Snowflake {
 	}
 }
 
+// Generate creates and returns a unique snowflake ID
 func (s *Snowflake) Generate() int64 {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -60,6 +61,11 @@ func (s *Snowflake) Generate() int64 {
 	s.lastTimestamp = ts
 
 	return ((ts - epoch) << timestampLeftShift) | (s.dataCenterID << dataCenterIDShift) | (s.workerID << workerIDShift) | s.sequence
+}
+
+// Function to convert a snowflake ID into a String
+func (s *Snowflake) String(id int64) string {
+	return fmt.Sprintf("%d", id)
 }
 
 func main() {

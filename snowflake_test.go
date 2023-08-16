@@ -1,6 +1,7 @@
 package snowflake
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -40,5 +41,15 @@ func TestSnowflake_GenerateOneMillion(t *testing.T) {
 			t.Fatalf("ID is not unique: %d", id)
 		}
 		ids[id] = true
+	}
+}
+
+func TestSnowflake_String(t *testing.T) {
+	node := NewSnowflake(1, 1)
+	id := node.Generate()
+	expected := fmt.Sprintf("%d", id)
+	actual := node.String(id)
+	if actual != expected {
+		t.Errorf("String() returned %s, expected %s", actual, expected)
 	}
 }
